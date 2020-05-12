@@ -833,6 +833,23 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
         }
     }
 
+    @ReactMethod
+    public void sendBroadcast(String intentStr, ReadableMap extras, final Promise promise) {
+        Intent broadcastIntent = new Intent(intentStr);
+        if (broadcastIntent == null) {
+            promise.resolve(false);
+            return;
+        }
+
+        if (!parseExtras(extras, broadcastIntent)) {
+            promise.resolve(false);
+            return;
+        }
+
+        this.reactContext.sendBroadcast(broadcastIntent);
+        promise.resolve(true);
+    }
+
     private final ActivityEventListener mActivityEventListener = new BaseActivityEventListener() {
       @Override
       public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent data) {
