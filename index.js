@@ -120,6 +120,9 @@ var SendIntentAndroid = {
     requestIgnoreBatteryOptimizations() {
         return RNSendIntentAndroid.requestIgnoreBatteryOptimizations();
     },
+    sendBroadcast(intentStr, extras) {
+        return RNSendIntentAndroid.sendBroadcast(intentStr, extras || {});
+    },
     showIgnoreBatteryOptimizationsSettings() {
         RNSendIntentAndroid.showIgnoreBatteryOptimizationsSettings();
     },
