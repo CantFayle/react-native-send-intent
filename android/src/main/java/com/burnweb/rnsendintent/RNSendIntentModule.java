@@ -639,7 +639,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
             e.printStackTrace();
             promise.resolve(false);
         }*/
-        Intent broadcastIntent = new Intent(intentStr);
+        Intent broadcastIntent = new Intent(dataUri);
         if (broadcastIntent == null) {
             promise.resolve(false);
             return;
@@ -649,7 +649,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
 //            promise.resolve(false);
 //            return;
 //        }
-        broadcastIntent.putExtra("TIMEOUT", 5000)
+        broadcastIntent.putExtra("TIMEOUT", "5000");
 
         this.reactContext.sendBroadcast(broadcastIntent);
         promise.resolve(true);

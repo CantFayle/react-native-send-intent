@@ -24,7 +24,8 @@
     "dial",
     "number",
     "maps",
-    "android"
+    "android",
+    "broadcast"
   ],
   "author": "Lucas Ferreira <contato@lucasferreira.com>",
   "license": "MIT",
