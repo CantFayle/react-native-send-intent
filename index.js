@@ -53,9 +53,9 @@ var SendIntentAndroid = {
     openChooserWithMultipleOptions(options, title) {
         RNSendIntentAndroid.openChooserWithMultipleOptions(options, title);
     },
-//    openMaps(query) {
-//        RNSendIntentAndroid.openMaps(query);
-//    },
+    openMaps(query) {
+        RNSendIntentAndroid.openMaps(query);
+    },
     openCamera() {
         RNSendIntentAndroid.openCamera();
     },
