@@ -437,6 +437,22 @@ SendIntentAndroid.getPhoneNumber().then(phoneNumber => {
 });
 ```
 
+## Example / Send Broadcast
+
+Send a broadcast with a custom intent:
+
+```javascript
+const intentStr = com.example.app.ACTION
+SendIntentAndroid.sendBroadcast(intentStr)
+    .then(wasOpened => {});
+
+// You can also specify arbitrary intent extras to be passed to the app
+SendIntentAndroid.openApp("com.mycorp.myapp",
+    { timeout: { type: "int", value: 500 }, }
+    )
+    .then(wasOpened => {});
+```
+
 ## Example / Request 'ignore battery optimizations'
 
 Please add this line to your AndroidManifest.xml file before using next example:
