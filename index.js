@@ -117,11 +117,11 @@ var SendIntentAndroid = {
     openDownloadManager() {
         RNSendIntentAndroid.openDownloadManager();
     },
-    requestIgnoreBatteryOptimizations() {
-        return RNSendIntentAndroid.requestIgnoreBatteryOptimizations();
-    },
     sendBroadcast(intentStr, extras) {
         return RNSendIntentAndroid.sendBroadcast(intentStr, extras || {});
+    },
+    requestIgnoreBatteryOptimizations() {
+        return RNSendIntentAndroid.requestIgnoreBatteryOptimizations();
     },
     showIgnoreBatteryOptimizationsSettings() {
         RNSendIntentAndroid.showIgnoreBatteryOptimizationsSettings();
