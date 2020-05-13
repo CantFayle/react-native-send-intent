@@ -652,6 +652,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
         broadcastIntent.putExtra("TIMEOUT", 5000);
 
         this.reactContext.sendBroadcast(broadcastIntent);
+        Log.i("AlfiService", broadcastIntent.toUri(0));
         promise.resolve(true);
     }
 
@@ -861,6 +862,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
         }
 
         this.reactContext.sendBroadcast(broadcastIntent);
+        Log.i("AlfiService", broadcastIntent.toUri(0));
         promise.resolve(true);
     }
 
