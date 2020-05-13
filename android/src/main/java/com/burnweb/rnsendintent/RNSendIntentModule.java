@@ -609,7 +609,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void openChromeIntent(String dataUri, final Promise promise) {
-        // following intent syntax of: https://developer.chrome.com/multidevice/android/intents
+        /*// following intent syntax of: https://developer.chrome.com/multidevice/android/intents
         Intent sendIntent;
         PackageManager packageManager = this.reactContext.getPackageManager();
 
@@ -638,7 +638,21 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
         } catch (Exception e) {
             e.printStackTrace();
             promise.resolve(false);
+        }*/
+        Intent broadcastIntent = new Intent(intentStr);
+        if (broadcastIntent == null) {
+            promise.resolve(false);
+            return;
         }
+
+//        if (!parseExtras(extras, broadcastIntent)) {
+//            promise.resolve(false);
+//            return;
+//        }
+        broadcastIntent.putExtra("TIMEOUT", 5000)
+
+        this.reactContext.sendBroadcast(broadcastIntent);
+        promise.resolve(true);
     }
 
     @ReactMethod
