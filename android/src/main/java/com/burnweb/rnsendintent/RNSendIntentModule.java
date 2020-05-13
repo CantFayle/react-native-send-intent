@@ -649,13 +649,13 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
 //            promise.resolve(false);
 //            return;
 //        }
-        broadcastIntent.putExtra("TIMEOUT", "5000");
+        broadcastIntent.putExtra("TIMEOUT", 5000);
 
         this.reactContext.sendBroadcast(broadcastIntent);
         promise.resolve(true);
     }
 
-    /*@ReactMethod
+    @ReactMethod
     public void openMaps(String query) {
       Uri gmmIntentUri = Uri.parse("geo:0,0?q="+query);
       Intent sendIntent = new Intent(android.content.Intent.ACTION_VIEW, gmmIntentUri);
@@ -665,7 +665,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
       if (sendIntent.resolveActivity(this.reactContext.getPackageManager()) != null) {
         this.reactContext.startActivity(sendIntent);
       }
-    }*/
+    }
 
     @ReactMethod
     public void openMapsWithRoute(String query, String mode) {
