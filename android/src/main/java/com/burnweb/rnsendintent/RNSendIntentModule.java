@@ -609,8 +609,8 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
 
     @ReactMethod
     public void openChromeIntent(String dataUri, final Promise promise) {
-        /*// following intent syntax of: https://developer.chrome.com/multidevice/android/intents
-        Intent sendIntent;
+        // following intent syntax of: https://developer.chrome.com/multidevice/android/intents
+        /*Intent sendIntent;
         PackageManager packageManager = this.reactContext.getPackageManager();
 
         try {
@@ -655,7 +655,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
         promise.resolve(true);
     }
 
-    @ReactMethod
+    /*@ReactMethod
     public void openMaps(String query) {
       Uri gmmIntentUri = Uri.parse("geo:0,0?q="+query);
       Intent sendIntent = new Intent(android.content.Intent.ACTION_VIEW, gmmIntentUri);
@@ -665,7 +665,7 @@ public class RNSendIntentModule extends ReactContextBaseJavaModule {
       if (sendIntent.resolveActivity(this.reactContext.getPackageManager()) != null) {
         this.reactContext.startActivity(sendIntent);
       }
-    }
+    }*/
 
     @ReactMethod
     public void openMapsWithRoute(String query, String mode) {

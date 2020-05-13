@@ -54,7 +54,7 @@ declare namespace SendIntentAndroid {
   const sendMail: (recepientMail: string, subject?: string, body?: string) => void
   const openChooserWithOptions: (options: ChooserOptions, title: string) => void
   const openChooserWithMultipleOptions: (options: ChooserOptions[], title: string) => void
-  const openMaps: (query: string) => void
+
   const openCamera: () => void
   const openMapsWithRoute: (query: string, mode: string)=> void
   const shareTextToLine: (options: TextToLineOptions)=> void
