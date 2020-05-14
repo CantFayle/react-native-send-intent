@@ -70,7 +70,7 @@ declare namespace SendIntentAndroid {
   const openFileChooser: (options: FileChooserOptions, title: string) => void
   const openEmailApp: () => void
   const openAllEmailApp: () => void
-  const sendBroadcast: (intentStr: string, extras: { [index: string]: string }) => void
+  const sendBroadcast: (intentStr: string, extras: { [index: string]: string }) => Promise<boolean>
   const TEXT_PLAIN: unique symbol
   const TEXT_HTML: unique symbol
 }
