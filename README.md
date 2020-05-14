@@ -437,6 +437,29 @@ SendIntentAndroid.getPhoneNumber().then(phoneNumber => {
 });
 ```
 
+## Example / Send Broadcast
+
+Send a broadcast with a custom intent:
+
+```javascript
+const intentStr = com.example.app.ACTION
+SendIntentAndroid.sendBroadcast(intentStr)
+    .then(wasOpened => {
+        //do something
+    });
+
+// You can also specify arbitrary intent extras to be passed to with the broadcast
+SendIntentAndroid.sendBroadcast(intentStr, { 
+    extraInt: { type: 'int', value: 500 }, //type should be one of ['int','short','byte','char','long','float','double']
+    extraBool: true|false,
+    extraString: 'some value',
+    extraNumber: 1337 //this defaults to double
+    extraArray: [] //array can be filled with any of the above types - but all elements in array must be same type!
+}).then(wasOpened => {
+    //do something
+});
+```
+
 ## Example / Request 'ignore battery optimizations'
 
 Please add this line to your AndroidManifest.xml file before using next example:

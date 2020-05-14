@@ -117,6 +117,9 @@ var SendIntentAndroid = {
     openDownloadManager() {
         RNSendIntentAndroid.openDownloadManager();
     },
+    sendBroadcast(intentStr, extras) {
+        return RNSendIntentAndroid.sendBroadcast(intentStr, extras || {});
+    },
     requestIgnoreBatteryOptimizations() {
         return RNSendIntentAndroid.requestIgnoreBatteryOptimizations();
     },
