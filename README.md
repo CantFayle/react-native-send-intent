@@ -447,10 +447,9 @@ SendIntentAndroid.sendBroadcast(intentStr)
     .then(wasOpened => {});
 
 // You can also specify arbitrary intent extras to be passed to the app
-SendIntentAndroid.openApp("com.mycorp.myapp",
-    { timeout: { type: "int", value: 500 }, }
-    )
-    .then(wasOpened => {});
+SendIntentAndroid.sendBroadcast(intentStr,
+    { timeout: { type: "int", value: 500 }, } //type should be one of ['int','short','byte','char','long','float','double']
+    ).then(wasOpened => {});
 ```
 
 ## Example / Request 'ignore battery optimizations'
