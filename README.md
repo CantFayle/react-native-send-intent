@@ -446,9 +446,9 @@ const intentStr = com.example.app.ACTION
 SendIntentAndroid.sendBroadcast(intentStr)
     .then(wasOpened => {});
 
-// You can also specify arbitrary intent extras to be passed to the app
+// You can also specify arbitrary intent extras to be passed to with the broadcast
 SendIntentAndroid.sendBroadcast(intentStr,
-    { timeout: { type: "int", value: 500 }, } //type should be one of ['int','short','byte','char','long','float','double']
+    { extraParam: { type: "int", value: 500 }, } //type should be one of ['int','short','byte','char','long','float','double']
     ).then(wasOpened => {});
 ```
 
